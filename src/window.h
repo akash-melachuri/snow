@@ -12,16 +12,23 @@
 
 #include "core.h"
 
-class window {
+class Window {
 public:
-  window(uint32_t width, uint32_t height, const std::string &title);
-  ~window();
+  Window(uint32_t width, uint32_t height, const std::string &title);
 
   uint32_t get_width() const;
   uint32_t get_height() const;
+
+  void set_size(uint32_t width, uint32_t height);
+
   bool should_close() const;
   void poll_events() const;
 
+  void destroy() const;
+
+  static void init();
+  static void cleanup();
+
 private:
-  GLFWwindow* raw_window;
+  GLFWwindow *raw_window;
 };
