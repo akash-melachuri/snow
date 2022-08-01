@@ -1,8 +1,10 @@
 #pragma once
 
 #include "core.h"
+#include "renderer.h"
 #include "window.h"
 
+namespace snow {
 class Engine {
 public:
   void init();
@@ -12,4 +14,6 @@ public:
 
 private:
   std::unique_ptr<Window> window;
+  std::unique_ptr<Renderer> renderer;
 };
+} // namespace snow
