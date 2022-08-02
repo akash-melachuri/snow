@@ -3,6 +3,7 @@
 #include "core.h"
 #include "renderer.h"
 #include "window.h"
+#include "app.h"
 
 namespace snow {
 class Engine {
@@ -15,5 +16,6 @@ public:
 private:
   std::unique_ptr<Window> window;
   std::unique_ptr<Renderer> renderer;
+  std::unique_ptr<App> app;
 };
 } // namespace snow

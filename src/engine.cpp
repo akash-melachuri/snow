@@ -6,6 +6,8 @@ void Engine::init() {
 }
 
 void Engine::init(uint32_t width, uint32_t height, const std::string &title) {
+  app = std::make_unique<App>();
+
   Window::init();
   window = std::make_unique<Window>(width, height, title);
 
@@ -16,6 +18,9 @@ void Engine::init(uint32_t width, uint32_t height, const std::string &title) {
 void Engine::run() {
   while (!window->should_close()) {
     window->poll_events();
+    
+    app->update();
+
     renderer->render();
   }
 }
