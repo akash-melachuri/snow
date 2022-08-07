@@ -1,13 +1,11 @@
-#include "engine.h"
+#include "game.h"
 
 namespace snow {
-void Engine::init() {
+void Game::init() {
     init(800, 600, "Snow");
 }
 
-void Engine::init(uint32_t width, uint32_t height, const std::string &title) {
-  app = std::make_unique<App>();
-
+void Game::init(uint32_t width, uint32_t height, const std::string &title) {
   Window::init();
   window = std::make_unique<Window>(width, height, title);
 
@@ -15,17 +13,15 @@ void Engine::init(uint32_t width, uint32_t height, const std::string &title) {
   renderer->init(*window);
 }
 
-void Engine::run() {
+void Game::run() {
   while (!window->should_close()) {
     window->poll_events();
     
-    app->update();
-
     renderer->render();
   }
 }
 
-void Engine::cleanup() {
+void Game::cleanup() {
   renderer->cleanup();
 
   window->destroy();
