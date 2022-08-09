@@ -1,8 +1,6 @@
 #pragma once
 
-#include "engine/core.h"
-#include "engine/renderer.h"
-#include "engine/window.h"
+#include <snow.h>
 
 namespace snow {
 class Game {
