@@ -2,7 +2,6 @@
 
 #include <snow.h>
 
-namespace snow {
 class Game {
 public:
   void init();
@@ -11,7 +10,6 @@ public:
   void cleanup();
 
 private:
-  std::unique_ptr<Window> window;
-  std::unique_ptr<Renderer> renderer;
+  std::unique_ptr<snow::Window> window;
+  std::unique_ptr<snow::Renderer> renderer;
 };
-} // namespace snow
